@@ -1,0 +1,86 @@
+.promo__wrapper {
+    max-width: 1360px;
+    height: 644px;
+    // background-image: url('../assets/img-hero.jpg');
+    background-size: auto auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 40px;
+    background-color: $color-text-dark;
+    padding: 100px;
+    margin: 20px 40px 0;
+    @media (max-width: $tablet-width) {
+        padding: 100px 60px;
+    }
+    @media (max-width: 500px) {
+        padding: 60px 16px;
+        margin: 20px 16px 0;
+        height: 552px;
+    }
+    position: relative;
+    video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        border-radius: 40px;
+    }
+}
+
+.promo__container {
+    width: 530px;
+    height: 100%;
+    @extend %flex-column;
+    @include display-flex($direction: column, $align-items: start);
+    @media (max-width: 650px) {
+        width: 316px;
+    }
+    position: relative;
+    z-index: 2;
+}
+
+.promo__text {
+    color: $color-text-light;
+}
+
+.promo__button {
+    background-color: $color-background-body;
+    @include display-flex ($justify-content: center);
+    border: none;    
+}
+
+.promo__button__text {
+    margin-left: 20px;
+    @extend %transition;
+    @media (max-width: $tablet-width) {
+        margin-left: 0;
+    }
+}
+
+.promo__button__ico{
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s opacity, 0.5s visibility;    
+    @media (max-width: $tablet-width) {
+        visibility: visible;
+        opacity: unset;
+        margin-left: 8px;
+    }
+}
+
+.promo__button:hover {  
+    @media (hover: hover) {
+        .promo__button__text {
+            transition: all .5s ease-out;
+            margin-left: 0;
+        }
+        .promo__button__ico {
+            opacity: 1;
+            visibility: visible;
+            margin-left: 8px;
+        }
+    }    
+}
