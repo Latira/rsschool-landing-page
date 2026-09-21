@@ -10,7 +10,7 @@
 }
 
 .header__nav__item {
-    margin: 0 20px;
+    margin: 0 15px;
 }
 
 .header__nav-link, .header__menu-link {
@@ -65,4 +65,25 @@ hr {
     @media (max-width: $tablet-width) {
         display: block;
     }
+}
+
+.header_theme-btn {
+  background: transparent;          // Полностью убираем серый фабричный фон
+  border: 1px solid $color-border-dark; // Делаем тонкую рамку (используем вашу константу)
+  border-radius: 50%;               // Скругляем рамку, чтобы получился идеальный круг
+  width: 32px;                      // Задаем ширину круга
+  height: 32px;                     // Задаем высоту круга
+  display: inline-flex;             // Включаем флекс, чтобы выровнять смайлик внутри
+  align-items: center;              // Центрируем луну по вертикали
+  justify-content: center;          // Центрируем луну по горизонтали
+  font-size: 18px;                  // Задаем размер самого смайлика
+  cursor: pointer;                  // Превращаем стрелку мышки в "палец" при наведении
+  padding: 0;                       // Сбрасываем внутренние отступы кнопки
+  // Добавляем плавность, чтобы кнопка реагировала на наведение мягко
+  transition: transform 0.2s ease, background-color 0.3s ease, border-color 0.3s ease;
+  // Эффект при наведении курсора
+  &:hover {
+    transform: scale(1.1);          // Кнопка станет чуть больше (на 10%)
+    background-color: rgba($color-text-dark, 0.08); // Появится нежный кофейный фон
+  }
 }
