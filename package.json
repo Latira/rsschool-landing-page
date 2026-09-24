@@ -1,0 +1,21 @@
+{
+  "name": "rsschool-landing-page",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Latira/rsschool-landing-page#readme",
+  "bugs": {
+    "url": "https://github.com/Latira/rsschool-landing-page/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Latira/rsschool-landing-page.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "style": "sass --watch sass/style.scss style.css"
+  }
+}

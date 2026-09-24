@@ -1,0 +1,106 @@
+.footer__container {
+    @extend %flex-row;
+    padding: 100px 100px;
+    color: $color-text-light;
+    margin-bottom: 40px;
+    @media (max-width: 840px) {
+        @include display-flex($direction: column, $align-items: start);
+        padding: 100px 60px;
+    }
+    @media (max-width: $mobile-width) {
+        padding: 60px 16px;
+    }
+}
+
+.footer__column {
+    width: 46%;
+    @include display-flex($direction: column, $align-items: start);
+    h2 {
+        text-align: start;
+    }
+    @media (max-width: 840px) {
+        width: 100%;
+    }
+}
+
+.footer__socials {
+    @include display-flex($align-items: start);
+    margin-top: 40px;
+    .button {
+        @include display-flex($justify-content: center, $align-items: center);
+        width: 60px;
+        border: 1px solid $color-border-light;
+        margin-right: 12px;
+        img {
+            width: 24px;
+            height: 24px;
+        }
+    }
+    a:hover {
+        @media (hover: hover) {
+            background-color: $color-background-body;
+            img {
+                filter: invert(1);        
+            }
+            transition: all .5s ease-out;
+        }
+    }
+    @media (max-width: 840px) {
+        margin-bottom: 100px;
+    }
+    @media (max-width: $mobile-width) {
+        margin-bottom: 40px;
+    }
+}
+
+.footer__info {
+    margin-top: 25px;
+    @include display-flex($direction: column, $align-items: start);
+    li {
+        margin-top: 17px;
+        position: relative;
+        @extend %flex-row;
+    }
+    a {
+        @extend %flex-row;        
+    }
+    a:visited, a:link {
+        color: $color-text-light;
+    }
+    img {
+        margin-right: 8px;
+    }
+    
+    span:after {
+        display: block;
+        position: absolute;
+        left: 50%; 
+        width: 0;
+        height: 2px;
+        background-color: $color-text-light;
+        content: "";
+        transform: translateX(-50%);
+        transition: all .5s ease-out;
+    }
+    span:hover:after {
+        @media (hover: hover) {
+            width: 100%; 
+        }       
+    }
+    // @media (min-width: 769px) {
+    //     span:after {
+    //         display: block;
+    //         position: absolute;
+    //         left: 50%; 
+    //         width: 0;
+    //         height: 2px;
+    //         background-color: $color-text-light;
+    //         content: "";
+    //         transform: translateX(-50%);
+    //         transition: all .5s ease-out;
+    //     }
+    //     span:hover:after {
+    //         width: 100%;
+    //     }
+    // }
+}

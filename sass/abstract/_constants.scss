@@ -1,0 +1,34 @@
+$content-width: 1440px;
+$tablet-width: 768px;
+$mobile-width: 380px;
+
+:root {
+  --color-background-body: #E1D4C9;
+  --color-background-container: #665F55;
+  --color-background-backdrop: #403F3DCC;
+  --color-text-dark: #403F3D;
+  --color-text-light: #E1D4C9;
+  --color-text-accent: #B0907A;
+  --color-border-light: #C1B6AD;
+  --color-border-dark: #665F55;
+}
+
+body.dark {
+  --color-background-body: #212121;
+  --color-background-container: #313131;
+  --color-background-backdrop: #1a1a1acc;
+  --color-text-dark: #F5F5F7;
+  --color-text-light: #F5F5F7;
+  --color-text-accent: #E1B8A5;
+  --color-border-light: #444444;
+  --color-border-dark: #313131;
+}
+
+$color-background-body: var(--color-background-body);
+$color-background-container: var(--color-background-container);
+$color-background-backdrop: var(--color-background-backdrop);
+$color-text-dark: var(--color-text-dark);
+$color-text-light: var(--color-text-light);
+$color-text-accent: var(--color-text-accent);
+$color-border-light: var(--color-border-light);
+$color-border-dark: var(--color-border-dark);
