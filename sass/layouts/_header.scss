@@ -58,32 +58,96 @@ hr {
 }
 
 .burger {
-    cursor: pointer;
-    @media (min-width: $tablet-width) {
-        display: none;
-    }
-    @media (max-width: $tablet-width) {
-        display: block;
-    }
+    display: none;
 }
 
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+        background: transparent;
+        border: 1px solid $color-border-dark;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding: 0;
+        z-index: 1;
+        transition: transform 0.2s ease, background-color 0.3s ease;
+        cursor: pointer;
+        &:hover {
+            background-color: $color-border-light;
+        }
+        .burger-line,
+        &::after {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 2px;
+            background-color: $color-text-dark;
+            border-radius: 1px;
+            left: calc(50% - 8px);
+            transition: transform 0.3s ease, top 0.3s ease, background-color 0.2s ease;
+        }
+        .burger-line {
+            top: 15px;
+        }
+        &::after {
+            top: 23px;
+        }
+        &.open {
+            .burger-line {
+                top: 18px; 
+                transform: rotate(45deg); 
+            }
+        &::after {
+            top: 18px;
+            transform: rotate(-45deg);
+            }
+        }
+    }
+    .header__nav {
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    width: 250px;
+    height: calc(100vh - 60px);
+    background-color: $color-background-body; // Используем ваш цвет фона
+    padding: 40px;
+    box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+    transition: right 0.4s ease;
+    &.open {
+      right: 0;
+    }
+    ul.header__nav {
+      flex-direction: column;
+      gap: 32px;
+      align-items: flex-start;
+      padding: 0;
+    }
+  }
+}
+
+
+
 .header_theme-btn {
-  background: transparent;          // Полностью убираем серый фабричный фон
-  border: 1px solid $color-border-dark; // Делаем тонкую рамку (используем вашу константу)
-  border-radius: 50%;               // Скругляем рамку, чтобы получился идеальный круг
-  width: 32px;                      // Задаем ширину круга
-  height: 32px;                     // Задаем высоту круга
-  display: inline-flex;             // Включаем флекс, чтобы выровнять смайлик внутри
-  align-items: center;              // Центрируем луну по вертикали
-  justify-content: center;          // Центрируем луну по горизонтали
-  font-size: 18px;                  // Задаем размер самого смайлика
-  cursor: pointer;                  // Превращаем стрелку мышки в "палец" при наведении
-  padding: 0;                       // Сбрасываем внутренние отступы кнопки
-  // Добавляем плавность, чтобы кнопка реагировала на наведение мягко
+  background: transparent;          
+  border: 1px solid $color-border-dark; 
+  border-radius: 50%;               
+  width: 32px;                      
+  height: 32px;                     
+  display: inline-flex;             
+  align-items: center;              
+  justify-content: center;          
+  font-size: 18px;                  
+  cursor: pointer;                  
+  padding: 0;                       
   transition: transform 0.2s ease, background-color 0.3s ease, border-color 0.3s ease;
-  // Эффект при наведении курсора
+ 
   &:hover {
-    transform: scale(1.1);          // Кнопка станет чуть больше (на 10%)
-    background-color: rgba($color-text-dark, 0.08); // Появится нежный кофейный фон
+    transform: scale(1.1);          
+    background-color: rgba($color-text-dark, 0.08); 
   }
 }

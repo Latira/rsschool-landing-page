@@ -36,6 +36,9 @@ const controlBarSecond = document.querySelector('.control__bar2');
 const controlBarThird = document.querySelector('.control__bar3');
 const themeBtn = document.getElementById('theme-toggle');
 const savedTheme = localStorage.getItem('theme');
+const burgerBtn = document.getElementById('burger-open');
+const burgerMenu = document.getElementById('burger');
+const menuLinks = document.querySelectorAll('#burger a');
 let checkedPagination = document.querySelector('.active');
 let progressBarWidth;
 
@@ -189,5 +192,19 @@ if (savedTheme === 'dark') {
   document.body.classList.add('dark');
   themeBtn.textContent = '☀️';
 }
+
+burgerBtn.addEventListener('click', () => {
+  burgerMenu.classList.toggle('open');
+  burgerBtn.classList.toggle('open');
+  document.body.classList.toggle('lock'); 
+  });
+
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      burgerMenu.classList.remove('open');
+      burgerBtn.classList.remove('open');
+      document.body.classList.remove('lock');
+    });
+});
 
 
