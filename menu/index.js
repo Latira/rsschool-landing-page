@@ -20,24 +20,25 @@ if (savedTheme === 'dark') {
   themeBtn.textContent = '☀️';
 }
 
-
-  const addButtonMoreClickHandler = () => {
-     document.querySelector('.menu__button-more').addEventListener('click', () => {
-         addCategory(document.querySelector('.checked'))
-     })
-  }
-
 burgerBtn.addEventListener('click', () => {
   burgerMenu.classList.toggle('open');
   burgerBtn.classList.toggle('open');
   document.body.classList.toggle('lock'); 
   });
 
-  menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      burgerMenu.classList.remove('open');
-      burgerBtn.classList.remove('open');
-      document.body.classList.remove('lock');
-    });
+function closeMenu() {
+  burgerMenu.classList.remove('open');
+  burgerBtn.classList.remove('open');
+  document.body.classList.remove('lock');
+}
+
+menuLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+});
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && burgerMenu.classList.contains('open')) {
+    closeMenu();
+  }
 });
 

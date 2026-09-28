@@ -29,12 +29,14 @@ burgerBtn.addEventListener('click', () => {
   document.body.classList.toggle('lock'); 
   });
 
-  menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      burgerMenu.classList.remove('open');
-      burgerBtn.classList.remove('open');
-      document.body.classList.remove('lock');
-    });
+function closeMenu() {
+  burgerMenu.classList.remove('open');
+  burgerBtn.classList.remove('open');
+  document.body.classList.remove('lock');
+}
+
+menuLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
 });
 
 window.addEventListener('keydown', (e) => {
