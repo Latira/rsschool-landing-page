@@ -37,4 +37,10 @@ burgerBtn.addEventListener('click', () => {
     });
 });
 
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && burgerMenu.classList.contains('open')) {
+    closeMenu();
+  }
+});
+
 
