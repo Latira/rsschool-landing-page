@@ -1,0 +1,101 @@
+html {
+    font-size: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $color-background-body;
+    max-width: $content-width;
+    margin: 0 auto;
+    @extend %font-medium;
+    color: $color-text-dark;
+}
+
+section, main, footer, header {
+    display: block;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    @media (max-width: $tablet-width) {
+        cursor: auto;
+    }
+}
+
+a:visited, a:link {
+    color: $color-text-dark;
+}
+
+h1, h2, h3, ul, hr, p {
+    margin: 0;
+}
+
+h1 {
+    @include font($size: 7.2rem, $height: 105%);
+    color: $color-text-light;
+    @media (max-width: 650px) {
+        @include font($size: 4.2rem, $height: 115%);
+    }
+}
+
+h1 span, h2 span {
+    color: $color-text-accent;
+    font-style: italic;
+}
+
+.h1-menu {
+    color: $color-text-dark;
+    @include font($size: 6.0rem, $height: 125%);
+    @media (max-width: $mobile-width) {
+        @include font($size: 3.2rem, $height: 125%);
+    }
+}
+
+.button {
+    width: 200px;
+    height: 64px;
+    border-radius: 100px;
+    @extend %font-links;
+    cursor: pointer;
+    @media (max-width: $tablet-width) {
+        cursor: auto;
+    }
+}
+
+h2 {
+    @include font($size: 6.0rem, $height: 125%);
+    text-align: center;
+    @media (max-width: 650px) {
+        @include font($size: 3.2rem, $height: 125%);
+    }
+}
+
+h3 {
+    @include font($size: 24px, $height: 125%)
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

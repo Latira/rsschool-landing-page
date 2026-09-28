@@ -1,0 +1,33 @@
+%transition {
+    transition: all .5s ease-out;
+}
+
+%font-links {
+    @include font($size: 1.6rem)
+}
+
+%font-medium {
+    @include font($size: 1.6rem, $weight: 400)
+}
+
+%flex-row {
+    @include display-flex;
+}
+
+%flex-column {
+    @include display-flex($direction: column);
+}
+
+%button-hover {
+    background-color: $color-background-container;
+    img {
+        filter: invert(1);        
+    }
+}
+
+%button-hover-light {
+    background-color: $color-background-body;
+    img {
+        filter: invert(1);        
+    }
+}

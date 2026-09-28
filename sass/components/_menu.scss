@@ -1,0 +1,110 @@
+.menu__tabs {
+    @extend %flex-row;
+    margin: 40px 0;
+}
+
+.menu__tab {
+    width: 100%;
+    @extend %flex-row;
+    border: 1px solid $color-border-light;
+    padding: 8px 16px 8px 8px;
+    margin-right: 16px;
+    height: 46px;
+    @media (max-width: 450px) {
+        margin-right: 8px;
+    }
+}
+
+.menu__tab__last {
+    margin-right: 0
+}
+
+.menu__tab.checked {
+    @extend %button-hover;
+    img {
+        filter: none;
+    }
+    cursor: auto;
+    color: $color-text-light;
+    .menu__tab__ico {
+        background-color: $color-background-body;
+    }
+}
+
+.menu__tab:hover {
+    @media (hover: hover) {
+        background-color: $color-background-container;
+        transition: all .5s ease-out;
+        color: $color-text-light;
+        .menu__tab__ico {
+            background-color: $color-background-body;
+        }
+    }    
+}
+
+.menu__tab__ico {
+    @include display-flex($align-items: center, $justify-content: center);
+    padding: 7px;
+    border: none;
+    border-radius: 100px;
+    margin-right: 8px;
+    background-color: $color-border-light;
+}
+
+.menu__container {
+    max-width: 1360px;
+    @extend %flex-row;
+    flex-wrap: wrap;
+    @media (max-width: $tablet-width) {
+        margin-bottom: 0;
+        padding: 0 14px;        
+    }
+    @media (max-width: 680px) {
+        justify-content: center;
+    }
+}
+
+.menu__item {
+    width: 310px;
+    border: 1px solid $color-border-light;
+    border-radius: 40px;
+    margin-bottom: 40px;
+    cursor: pointer;
+    @extend %flex-column;
+    img {
+        width: 310px;
+        border-radius: 40px;
+    }
+    @media (max-width: $tablet-width) {
+        cursor: auto;
+    }
+}
+
+.menu__item__container {
+    padding: 20px; 
+    height: 196px;
+    @include display-flex($direction: column, $align-items: start);
+    width: 310px;
+}
+
+.menu__item__description {
+    h3 {
+        margin-bottom: 12px;
+    }
+}
+
+.menu__item__tablet-hidden {
+    @media (max-width: $tablet-width) {
+        display: none;
+    }    
+}
+
+.menu__button-more {
+    height: 60px;
+    @media (min-width: $tablet-width) {
+        display: none;
+    }
+    @media (max-width: $tablet-width) {
+        display: block;
+    }
+}
