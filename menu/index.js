@@ -6,6 +6,9 @@ const dessertTab = document.querySelector('.menu__tab-dessert');
 const menu = document.querySelector('.menu__container');
 const themeBtn = document.getElementById('theme-toggle');
 const savedTheme = localStorage.getItem('theme');
+const burgerBtn = document.getElementById('burger-open');
+const burgerMenu = document.querySelector('.header__nav');
+const menuLinks = document.querySelectorAll('#burger a');
 
 window.onload = function () {
 
@@ -115,4 +118,18 @@ if (savedTheme === 'dark') {
 //         addCategory(document.querySelector('.checked'))
 //     })
 //  }
+
+burgerBtn.addEventListener('click', () => {
+  burgerMenu.classList.toggle('open');
+  burgerBtn.classList.toggle('open');
+  document.body.classList.toggle('lock'); 
+  });
+
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      burgerMenu.classList.remove('open');
+      burgerBtn.classList.remove('open');
+      document.body.classList.remove('lock');
+    });
+});
 

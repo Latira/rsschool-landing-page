@@ -37,7 +37,7 @@ const controlBarThird = document.querySelector('.control__bar3');
 const themeBtn = document.getElementById('theme-toggle');
 const savedTheme = localStorage.getItem('theme');
 const burgerBtn = document.getElementById('burger-open');
-const burgerMenu = document.getElementById('burger');
+const burgerMenu = document.querySelector('.header__nav');
 const menuLinks = document.querySelectorAll('#burger a');
 let checkedPagination = document.querySelector('.active');
 let progressBarWidth;
