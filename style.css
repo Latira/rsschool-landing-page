@@ -682,7 +682,37 @@ hr {
 }
 
 .favorite__slider__content {
+  overflow: hidden;
   width: 480px;
+  display: block;
+  /*justify-content: flex-start;*/
+  margin: 0 auto;
+}
+
+@media (max-width: 500px) {
+  .favorite__slider__content {
+    width: 348px;
+  }
+}
+
+.slider-track {
+  display: flex;
+  width: 300%;
+  transition: transform 0.5s ease-in-out;
+  justify-content: flex-start !important;
+  /*align-items: flex-start;*/
+margin: 0;
+padding: 0;
+}
+
+.favorite__slider__item {
+  width: calc(100% / 3);
+  flex-basis: calc(100% / 3);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .favorite__slider__description {

@@ -55,15 +55,26 @@
                 <h2>Choose your <span>favorite</span> coffee</h2>
                 <div class="favorite__slider-container">
                     <div class="favorite__slider">
-                        <button class="button favorite__slider__button"><img src="assets/arrow-left.svg" alt="&larr;"></button>
-                        <div class="favorite__slider__content">
-                            <img class="favorite__slider__img" src="assets/coffee-slider/coffee-slider-1.svg" alt="frappuccino">
-                            <h3>S’mores Frappuccino</h3>
-                            <p class="favorite__slider__description">This new drink takes an espresso and mixes it with
-                                brown sugar and cinnamon before being topped with oat milk.</p>
-                            <h3>$5.50</h3>
-                        </div>
-                        <button class="button favorite__slider__button"><img src="assets/arrow-right.svg" alt="&rarr;"></button>
+                        <button id="prev-btn" class="button favorite__slider__button"><img src="assets/arrow-left.svg" alt="&larr;"></button>
+                        <div class="favorite__slider__content"><div class="slider-track">
+                            <div class="favorite__slider__item">
+                                <img class="favorite__slider__img" src="assets/coffee-slider/coffee-slider-1.svg" alt="frappuccino">
+                                <h3>S’mores Frappuccino</h3>
+                                <p class="favorite__slider__description">This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
+                                <h3>$5.50</h3>
+                            </div>                 <div class="favorite__slider__item">
+                                <img class="favorite__slider__img" src="assets/coffee-slider/coffee-slider-2.svg" alt="macciato">
+                                <h3>Caramel Macchiato</h3>
+                                <p class="favorite__slider__description">Fragrant black coffee with steamed milk and delicate caramel foam, customizable with a vanilla flavor.</p>
+                                <h3>$5.00</h3>
+                            </div>                 <div class="favorite__slider__item">
+                                <img class="favorite__slider__img" src="assets/coffee-slider/coffee-slider-3.svg" alt="ice-coffee">
+                                <h3>Ice Coffee</h3>
+                                <p class="favorite__slider__description">A popular summer choice that combines soft espresso with milk, ice, and a variety of syrups to taste.</p>
+                                <h3>$4.50</h3>
+                            </div>
+                        </div></div>
+                        <button id="next-btn" class="button favorite__slider__button"><img src="assets/arrow-right.svg" alt="&rarr;"></button>
                     </div>
                     <div class="favorite__slider__controls">
                         <button class="button favorite__slider__control checked"></button>
